@@ -29,9 +29,13 @@ public class ItemRepository {
 
     public void update(Long itemId, Item updateParam) {
         Item findItem = findById(itemId);
+        findItem.setOpen(updateParam.getOpen());
         findItem.setItemName(updateParam.getItemName());
         findItem.setPrice(updateParam.getPrice());
         findItem.setQuantity(updateParam.getQuantity());
+        findItem.setRegions(updateParam.getRegions());
+        findItem.setDeliveryCode(updateParam.getDeliveryCode());
+        findItem.setItemType(updateParam.getItemType());
     }
 
     public void clearStore() {
